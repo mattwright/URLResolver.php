@@ -55,12 +55,14 @@ else {
 }
 ```
 
-## Download and Requirements
+## Download and Requirements  
+  
 
 #### URLResolver.php is licensed under the [MIT License], viewable in the source code.  
   
+
 #### Download URLResolver.php as a [.tar.gz](https://github.com/mattwright/URLResolver.php/tarball/master) or [.zip](https://github.com/mattwright/URLResolver.php/zipball/master) file.  
-  
+
 #### Requirements
 - The [curl](http://php.net/manual/en/book.curl.php) extension must be installed as part of PHP
 - [PHP Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/) is required and included with the download.
