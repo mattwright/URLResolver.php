@@ -91,19 +91,19 @@ If no cookie file is set, cookies will be disabled and results may suffer.
 This file must not already exist.
 If it does, pass _true_ as second argument to enable overwrite.
 
-`$resolver->setMaxRedirects($max_redirects);  # Defaults to _10_`  
+`$resolver->setMaxRedirects($max_redirects);  # Defaults to 10`  
 Set the maximum number of URL requests to attempt during each resolveURL() call.
 
-`$resolver->setMaxResponseDataSize($max_bytes);  # Defaults to _120000_`  
+`$resolver->setMaxResponseDataSize($max_bytes);  # Defaults to 120000`  
 Pass in an integer specifying the maximum data to download per request.
 Multiple URL requests may occur during each resolveURL() call.
 Setting this too low may limit the usefulness of results (default 120000).
 
-`$resolver->setRequestTimeout($num_seconds);  # Defaults to _30_`  
+`$resolver->setRequestTimeout($num_seconds);  # Defaults to 30`  
 Set the maximum amount of time, in seconds, any URL request can take.
 Multiple URL requests may occur during each resolveURL() call.
 
-`$resolver->isDebugMode($value);  # Defaults to _false_`  
+`$resolver->isDebugMode($value);  # Defaults to false`  
 Set $value to _true_ to enable debug mode and _false_ to disable (the default).
 This will print out each link visited, along with status codes and link types.
 
