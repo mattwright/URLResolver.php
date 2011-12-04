@@ -1,7 +1,11 @@
 Welcome to URLResolver.php (v1.0 - December 3, 2011)
 ====================================================
 
-URLResolver.php is a PHP class that attempts to resolve URLs to a final, canonical link. On the web today, link shorteners, tracking codes and more can result in many different links that ultimately point to the same resource.  By following HTTP redirects and parsing web pages for open graph and canonical URLs, URLResolver.php attempts to solve this issue.
+URLResolver.php is a PHP class that attempts to resolve URLs to a final,
+canonical link. On the web today, link shorteners, tracking codes and more can
+result in many different links that ultimately point to the same resource.
+By following HTTP redirects and parsing web pages for open graph and canonical
+URLs, URLResolver.php attempts to solve this issue.
 
 ## Patterns Recognized
 
@@ -23,7 +27,11 @@ $resolver = new URLResolver();
 print $resolver->resolveURL('http://goo.gl/0GMP1')->getURL();
 ```
 
-However, in most cases you will want to perform a little extra setup. The following code sets a user agent to identify your crawler (otherwise the default will be used) and also designates a temporary file that can be used for storing cookies during the session.  Some web sites will test the browser for cookie support, so this will enhance your results.
+However, in most cases you will want to perform a little extra setup. The
+following code sets a user agent to identify your crawler (otherwise the
+default will be used) and also designates a temporary file that can be used
+for storing cookies during the session.  Some web sites will test the browser
+for cookie support, so this will enhance your results.
 
 ``` php
 <?php require_once('URLResolver.php');
@@ -88,7 +96,7 @@ Pass in a string that is sent to each web server to identify your crawler.
 *** This file will be removed at the end of each resolveURL() call. ***  
 Pass in the path to a file used to store cookies during each resolveURL() call.  
 If no cookie file is set, cookies will be disabled and results may suffer.  
-This file must not already exist.  
+This file must not already exist.
 If it does, pass _true_ as second argument to enable overwrite.
 
 `$resolver->setMaxRedirects($max_redirects);  # Defaults to 10`  
