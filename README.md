@@ -10,6 +10,8 @@ URLResolver.php is a PHP class that attempts to resolve URLs to a final, canonic
 - Follows [Canonical] URL &lt;link&gt; tags found in web page &lt;head&gt;
 - Aborts download quickly if content type is not an HTML page
 
+I am open to additional suggestions for improvement.
+
 ## Usage
 
 Resolving a URL can be as easy as:
@@ -82,26 +84,26 @@ Returns a [URLResult] object that contains the final, resolved URL.
 `$resolver->setUserAgent($user_agent);`  
 Pass in a string that is sent to each web server to identify your crawler.
 
-`$resolver->setCookieJar($cookie_file);`  # Defaults to disable cookies  
+`$resolver->setCookieJar($cookie_file);  # Defaults to disable cookies`  
 *** This file will be removed at the end of each resolveURL() call. ***  
 Pass in the path to a file used to store cookies during each resolveURL() call.
 If no cookie file is set, cookies will be disabled and results may suffer.
 This file must not already exist.
 If it does, pass _true_ as second argument to enable overwrite.
 
-`$resolver->setMaxRedirects($max_redirects);`  # Defaults to _10_  
+`$resolver->setMaxRedirects($max_redirects);  # Defaults to _10_`  
 Set the maximum number of URL requests to attempt during each resolveURL() call.
 
-`$resolver->setMaxResponseDataSize($max_bytes);`  # Defaults to _120000_  
+`$resolver->setMaxResponseDataSize($max_bytes);  # Defaults to _120000_`  
 Pass in an integer specifying the maximum data to download per request.
 Multiple URL requests may occur during each resolveURL() call.
 Setting this too low may limit the usefulness of results (default 120000).
 
-`$resolver->setRequestTimeout($num_seconds);`  # Defaults to _30_  
+`$resolver->setRequestTimeout($num_seconds);  # Defaults to _30_`  
 Set the maximum amount of time, in seconds, any URL request can take.
 Multiple URL requests may occur during each resolveURL() call.
 
-`$resolver->isDebugMode($value);`  # Defaults to _false_  
+`$resolver->isDebugMode($value);  # Defaults to _false_`  
 Set $value to _true_ to enable debug mode and _false_ to disable (the default).
 This will print out each link visited, along with status codes and link types.
 
