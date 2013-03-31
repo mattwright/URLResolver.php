@@ -122,7 +122,7 @@ class URLResolver {
 			$url_result = $this->fetchURLResult($url);
 
 			# Mark this as the starting URL if it is the first or equals that URL
-			if ($i || $url == $starting_url) { $url_result->isStartingURL(true); }
+			if ($i == 0 || $url == $starting_url) { $url_result->isStartingURL(true); }
 
 			# If we followed this URL because of some HTML markup, note that...
 			# Don't allow it to overwrite a true value determined from markup with a false value...
