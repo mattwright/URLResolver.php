@@ -1,4 +1,4 @@
-Welcome to URLResolver.php (v1.0 - December 3, 2011)
+Welcome to URLResolver.php (v1.1 - January 5, 2014)
 ====================================================
 
 URLResolver.php is a PHP class that attempts to resolve URLs to a final,
