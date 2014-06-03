@@ -1,4 +1,4 @@
-Welcome to URLResolver.php (v1.1 - January 5, 2014)
+Welcome to URLResolver.php
 ====================================================
 
 URLResolver.php is a PHP class that attempts to resolve URLs to a final,
@@ -163,6 +163,9 @@ May indicate a situation where you are more likely to try at least once more.
 If this returns _true_, didErrorOccur() will true as well.
 
 ## Changelog
+- v1.1 - June 3, 2014
+	- Support http redirect code 303
+
 - v1.0 - December 3, 2011
 	- Initial release supports http header redirects, og:url and rel=canonical
 

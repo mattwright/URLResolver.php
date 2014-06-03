@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php require_once('../URLResolver.php');
 /*******************************************************************************
-* Copyright (c) 2011 by Matt Wright
+* Copyright (c) 2011-2014 by Matt Wright
 * https://github.com/mattwright/URLResolver.php
 *
 * Licensed under The MIT License

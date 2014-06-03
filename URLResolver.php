@@ -1,6 +1,6 @@
 <?php require_once('lib/simple_html_dom.php');
 /*******************************************************************************
-* Copyright (c) 2011 by Matt Wright
+* Copyright (c) 2011-2014 by Matt Wright and contributors
 * https://github.com/mattwright/URLResolver.php
 *
 * Licensed under The MIT License
