@@ -1,4 +1,4 @@
-Welcome to URLResolver.php (v1.0 - December 3, 2011)
+Welcome to URLResolver.php (v1.1 - January 5, 2014)
 ====================================================
 
 URLResolver.php is a PHP class that attempts to resolve URLs to a final,
@@ -9,7 +9,7 @@ URLs, URLResolver.php attempts to solve this issue.
 
 ## Patterns Recognized
 
-- Follows 301 and 302 redirects found in HTTP headers
+- Follows 301, 302, and 303 redirects found in HTTP headers
 - Follows [Open Graph] URL &lt;meta&gt; tags found in web page &lt;head&gt;
 - Follows [Canonical] URL &lt;link&gt; tags found in web page &lt;head&gt;
 - Aborts download quickly if content type is not an HTML page
@@ -131,7 +131,7 @@ Examples: 200 - OK (success), 404 - Not Found, 301 - Moved Permanently, ...
 Returns _true_ if the [HTTP status code] for the resolved URL is 200.
 
 `$url_result->hasRedirectHTTPStatus();`  
-Returns _true_ if the [HTTP status code] for the resolved URL is 301 or 302.
+Returns _true_ if the [HTTP status code] for the resolved URL is 301, 302, or 303.
 
 `$url_result->getContentType();`  
 Returns the value of the Content-Type [HTTP header] for the resolved URL.  

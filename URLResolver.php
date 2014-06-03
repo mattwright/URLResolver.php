@@ -580,7 +580,7 @@ class URLResolverResult {
 	public function hasSuccessHTTPStatus() { return ($this->status == 200); }
 
 	# Returns _true_ if the [HTTP status code] for the resolved URL is 301 or 302.
-	public function hasRedirectHTTPStatus() { return ($this->status == 301 || $this->status == 302); }
+	public function hasRedirectHTTPStatus() { return ($this->status == 301 || $this->status == 302 || $this->status == 303); }
 
 	# Returns the value of the Content-Type [HTTP header] for the resolved URL.
 	# If header not provided, _null_ is returned. Examples: text/html, image/jpeg, ...
