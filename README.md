@@ -1,6 +1,8 @@
 Welcome to URLResolver.php
 ====================================================
 
+This is a fork of URL Resolver by Matt Wright and contributors that works with composer and conforms to psr-4.
+
 URLResolver.php is a PHP class that attempts to resolve URLs to a final,
 canonical link. On the web today, link shorteners, tracking codes and more can
 result in many different links that ultimately point to the same resource.

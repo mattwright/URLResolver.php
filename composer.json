@@ -1,0 +1,23 @@
+{
+    "name": "aboustayyef/URLResolver",
+    "description": "Redirects to final url",
+    "license": "MIT",
+    "keywords": ["urls", "redirection"],
+    "authors": [
+        {
+            "name": "Mustapha Hamoui",
+            "email": "mustapha@hamoui.com"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Resolver\\": "src"
+        }
+    }
+}

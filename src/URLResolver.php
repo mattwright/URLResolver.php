@@ -1,4 +1,5 @@
-<?php require_once('lib/simple_html_dom.php');
+<?php namespace Resolver;
+
 /*******************************************************************************
 * Copyright (c) 2011-2014 by Matt Wright and contributors
 * https://github.com/mattwright/URLResolver.php
@@ -533,7 +534,7 @@ class URLResolver {
 			$this->closeHTMLDOM();
 		}
 
-		$this->html_dom = new \simple_html_dom();
+		$this->html_dom = new simple_html_dom();
 		$this->html_dom->load($html_content);
 		return $this->html_dom;
 	}
