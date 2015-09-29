@@ -1,5 +1,5 @@
 {
-    "name": "aboustayyef/URLResolver",
+    "name": "aboustayyef/url-resolver",
     "description": "Redirects to final url",
     "license": "MIT",
     "keywords": ["urls", "redirection"],
