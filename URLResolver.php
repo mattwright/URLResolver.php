@@ -1,6 +1,6 @@
-<?php require_once('lib/simple_html_dom.php');
+<?php
 /*******************************************************************************
-* Copyright (c) 2011-2014 by Matt Wright and contributors
+* Copyright (c) 2011-2019 by Matt Wright and contributors
 * https://github.com/mattwright/URLResolver.php
 *
 * Licensed under The MIT License
@@ -24,6 +24,8 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 * THE SOFTWARE.
 *******************************************************************************/
+namespace mattwright;
+require_once(__DIR__.'/lib/simple_html_dom.php');
 
 class URLResolver {
 	private $curl;

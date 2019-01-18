@@ -23,7 +23,7 @@ Resolving a URL can be as easy as:
 ``` php
 <?php require_once('URLResolver.php');
 
-$resolver = new URLResolver();
+$resolver = new mattwright\URLResolver();
 print $resolver->resolveURL('http://goo.gl/0GMP1')->getURL();
 ```
 
@@ -35,7 +35,7 @@ for cookie support, so this will enhance your results.
 
 ``` php
 <?php require_once('URLResolver.php');
-$resolver = new URLResolver();
+$resolver = new mattwright\URLResolver();
 
 # Identify your crawler (otherwise the default will be used)
 $resolver->setUserAgent('Mozilla/5.0 (compatible; YourAppName/1.0; +http://www.example.com)');
@@ -82,7 +82,7 @@ URLResolver.php as a [.tar.gz](https://github.com/mattwright/URLResolver.php/tar
 
 ### URLResolver()
 
-`$resolver = new URLResolver();`  
+`$resolver = new mattwright\URLResolver();`  
 Create the URL resolver object that you call additional methods on.
 
 `$resolver->resolveURL($url);`  
