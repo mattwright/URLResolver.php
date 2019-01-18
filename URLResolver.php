@@ -516,6 +516,7 @@ class URLResolver {
 
 		curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($this->curl, CURLOPT_TIMEOUT, $this->request_timeout);
+		curl_setopt($this->curl, CURLOPT_CONNECTTIMEOUT, $this->request_timeout);
 
 		if (isset($this->cookie_jar)) {
 			curl_setopt($this->curl, CURLOPT_COOKIEJAR, $this->cookie_jar);
