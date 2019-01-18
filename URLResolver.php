@@ -320,9 +320,12 @@ class URLResolver {
 	private function fullyQualifyURI($uri, $url) {
 		$uri = trim($uri);
 
-		# Only use this if it looks like a URL/URI (starts with / or https?://)
+		# Only use this if it looks like a URL/URI (starts with /, www., or https?://)
 		# Otherwise, we won't be able to understand it.
-		if (!preg_match('/^\s*(\/|https?:\/\/)/i', $uri)) { return null; }
+		if (!preg_match('/^(\/|www\.|https?:\/\/)/i', $uri)) { return null; }
+
+		# If the link is to a domain only, we will standardize it by ensuring a trailing slash
+		if (preg_match('/^(\/|https?:\/\/)[^\/]+$/i', $uri)) { $uri .= '/'; }
 
 		# If the URL is localized, such as '/path/to/file', add the protocol and host back to the start.
 		if (strpos($uri, '/') === 0) {
@@ -339,6 +342,13 @@ class URLResolver {
 				if (preg_match('/^\s*([a-z]+:\/\/[^\/]+)/', $url, $matches)) {
 					$uri = $matches[1] . $uri;
 				}
+			}
+		}
+
+		# In the wild, finding several URLs that start with www. and no scheme. Add protocol.
+		if (strpos($uri, 'www.') === 0) {
+			if (preg_match('/^\s*([a-z]+:\/\/)/', $url, $matches)) {
+				$uri = $matches[1] . $uri;
 			}
 		}
 
