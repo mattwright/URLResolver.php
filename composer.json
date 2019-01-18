@@ -1,6 +1,7 @@
 {
 	"name": "mattwright/urlresolver",
 	"version": "2.0",
+	"type": "library",
 	"description": "PHP class that attempts to resolve URLs to a final, canonical link.",
 	"license": "MIT",
 	"keywords": ["url", "redirect", "resolve", "canonical", "link"],

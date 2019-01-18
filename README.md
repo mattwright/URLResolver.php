@@ -27,6 +27,12 @@ $resolver = new mattwright\URLResolver();
 print $resolver->resolveURL('http://goo.gl/0GMP1')->getURL();
 ```
 
+If you installed this library using composer, you would change the first line above to:
+
+``` php
+<?php require_once('vendor/autoload.php');
+```
+
 However, in most cases you will want to perform a little extra setup. The
 following code sets a user agent to identify your crawler (otherwise the
 default will be used) and also designates a temporary file that can be used
@@ -65,11 +71,13 @@ else {
 }
 ```
 
-## Download and Requirements  
+## Installation and Requirements  
   
-
 #### License
 URLResolver.php is licensed under the [MIT License], viewable in the source code.
+
+#### Install with Composer
+[composer require mattwright/urlresolver](https://packagist.org/packages/mattwright/urlresolver)
 
 #### Download
 URLResolver.php as a [.tar.gz](https://github.com/mattwright/URLResolver.php/tarball/master) or [.zip](https://github.com/mattwright/URLResolver.php/zipball/master) file.
