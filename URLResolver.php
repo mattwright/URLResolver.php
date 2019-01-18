@@ -116,6 +116,8 @@ class URLResolver {
 
 		$url_is_open_graph = false;
 		$url_is_canonical = false;
+                $url_includes_redirect = false;
+                $url_redirect_30x_count = 0;
 
 		$url_results = array();
 		for ($i = 0; $i < $this->max_redirects; $i++) {
@@ -135,6 +137,9 @@ class URLResolver {
 			# Don't allow it to overwrite a true value determined from markup with a false value...
 			if (!$url_result->isOpenGraphURL()) { $url_result->isOpenGraphURL($url_is_open_graph); }
 			if (!$url_result->isCanonicalURL()) { $url_result->isCanonicalURL($url_is_canonical); }
+                        
+                        # Propogate the 30x count
+                        $url_result->redirect30xCount($url_redirect_30x_count);
 
 			# Also print a short status line regarding the URL once it is fetched
 			if ($this->is_debug) {
@@ -195,6 +200,7 @@ class URLResolver {
 			$url = $next_url;
 			$url_is_open_graph = $url_result->redirectTargetIsOpenGraphURL();
 			$url_is_canonical = $url_result->redirectTargetIsCanonicalURL();
+                        $url_redirect_30x_count = $url_result->redirect30xCount();
 		}
 
 		return $this->resolveURLResults($url_results);
@@ -585,6 +591,8 @@ class URLResolverResult {
 	private $redirect_is_open_graph = false;
 	private $redirect_is_canonical = false;
 
+        private $redirect_30x_count = 0;
+        
 	private $failed = false;
 	private $error = false;
 	private $error_message = '';
@@ -605,7 +613,11 @@ class URLResolverResult {
 	public function hasSuccessHTTPStatus() { return ($this->status == 200); }
 
 	# Returns _true_ if the [HTTP status code] for the resolved URL is 301 or 302.
-	public function hasRedirectHTTPStatus() { return ($this->status == 301 || $this->status == 302 || $this->status == 303); }
+	public function hasRedirectHTTPStatus() {
+            $isRedirect = ($this->status == 301 || $this->status == 302 || $this->status == 303);
+            $this->redirect30xCount( $isRedirect );
+            return $isRedirect;
+        }
 
 	# Returns the value of the Content-Type [HTTP header] for the resolved URL.
 	# If header not provided, _null_ is returned. Examples: text/html, image/jpeg, ...
@@ -638,6 +650,12 @@ class URLResolverResult {
 		if (isset($value)) { $this->is_starting_point = $value ? true : false; }
 		return $this->is_starting_point;
 	}
+
+	# Returns number of 30x redirects we've been through
+        public function redirect30xCount($value=null) {
+		if (isset($value)) { $this->redirect_30x_count += $value; }
+		return $this->redirect_30x_count;
+        }
 
 	# Returns true if an error occurred while resolving the URL.
 	# If this returns false, $url_result is guaranteed to have a status code.
