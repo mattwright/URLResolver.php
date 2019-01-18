@@ -166,6 +166,12 @@ May indicate a situation where you are more likely to try at least once more.
 If this returns _true_, didErrorOccur() will true as well.
 
 ## Changelog
+- v2.0 - January 17, 2019
+	- Breaking change: namespaced the library for use with composer psr-4
+	- Add requested option to prefer canonical URL over Open Graph
+	- Minor fixes / improvements
+	- Upgrade simple_html_dom to 1.8.1
+
 - v1.1 - June 3, 2014
 	- Support http redirect code 303
 

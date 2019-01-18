@@ -1,6 +1,6 @@
 {
 	"name": "mattwright/urlresolver",
-	"version": "1.2",
+	"version": "2.0",
 	"description": "PHP class that attempts to resolve URLs to a final, canonical link.",
 	"license": "MIT",
 	"keywords": ["url", "redirect", "resolve", "canonical", "link"],
@@ -8,7 +8,8 @@
 	"authors": [ { "name": "Matt Wright", "email": "mw@mattwright.com" } ],
 	"require": {
 		"php": ">=5.3",
-		"ext-curl": "*"
+		"ext-curl": "*",
+		"ext-mbstring": "*"
 	},
 	"autoload": { "psr-4": { "mattwright\\": "." } }
 }
