@@ -111,6 +111,9 @@ Setting this too low may limit the usefulness of results (default 120000).
 Set the maximum amount of time, in seconds, any URL request can take.  
 Multiple URL requests may occur during each resolveURL() call.
 
+`$resolver->setPreferCanonicalURL($value);  # Defaults to false`  
+Set $value to _true_ to prioritize canonical URL over Open Graph URL.
+
 `$resolver->isDebugMode($value);  # Defaults to false`  
 Set $value to _true_ to enable debug mode and _false_ to disable (the default).  
 This will print out each link visited, along with status codes and link types.

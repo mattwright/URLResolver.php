@@ -36,6 +36,7 @@ class URLResolver {
 	private $request_timeout = 30;
 	private $max_redirects = 10;
 	private $max_response_data_size = 120000;
+	private $prefer_canonical_url = false;
 
 	# You must pass this function a filename to use as the cookie jar.
 	# An exception will be thrown if the file exists or cannot be created.
@@ -97,6 +98,10 @@ class URLResolver {
 		}
 
 		$this->closeCurl(); # Reset curl with new settings...
+	}
+
+	public function setPreferCanonicalURL($value) {
+		$this->prefer_canonical_url = $value ? true : false;
 	}
 
 	public function isDebugMode($value) {
@@ -457,6 +462,13 @@ class URLResolver {
 				if (isset($redirect_url)) {
 					if ($canonical_url == $redirect_url) {
 						$result->redirectTargetIsCanonicalURL(true);
+					}
+
+					# If setPreferCanonicalURL(true) was called, then we use it over Open Graph
+					else if ($this->prefer_canonical_url) {
+						$redirect_url = $canonical_url;
+						$result->redirectTargetIsCanonicalURL(true);
+						$result->redirectTargetIsOpenGraphURL(false);
 					}
 				}
 				else {
